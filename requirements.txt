@@ -1,4 +1,4 @@
-Django==2.0.7
+Django==2.2.10
 fpdf==1.7.2
 html5lib==1.0.1
 Jinja2==2.11.2
