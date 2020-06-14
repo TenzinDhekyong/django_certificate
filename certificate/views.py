@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View
-
-#importing get_template from loader
-from django.template.loader import get_template
+from django_tex.shortcuts import render_to_pdf
+# #importing get_template from loader
+# from django.template.loader import get_template
 
 # Create your views here.
 def landing_view(request, *args, ** kargs):
@@ -27,14 +27,18 @@ def generate(request, *args, **kargs):
     return render(request,"generate.html",{} )
 
 
-
-class GeneratePdf(View):
+class GeneratePdf(View):       
     def get(self, request, *args, **kwargs):
-        data = {
-             'today': datetime.date.today(), 
-             'amount': 39.99,
-            'customer_name': 'Cooper Mann',
-            'order_id': 1233434,
-        }
-        pdf = render_to_pdf('templates/base_certi.html', data)
-        return HttpResponse(pdf, content_type='application/pdf')
+        # data = {
+             
+        #      'amount': 39.99,
+        #     'customer_name': 'Cooper Mann',
+        #     'order_id': 1233434,
+        # }
+    
+        # pdf = render_to_pdf('templates/base_certi.html', data)
+        # return HttpResponse(pdf, content_type='application/pdf')
+
+        template_name = 'test.tex'
+        context = {'foo': 'Bar'}
+        return render_to_pdf(request, template_name, context, filename='test.pdf')

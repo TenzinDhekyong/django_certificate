@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'certificate',
+    'django_tex',
+    'cryptographic_fields',
+
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,15 @@ TEMPLATES = [
             ],
         },
     },
+    {
+        'NAME': 'tex',
+        'BACKEND': 'django_tex.engine.TeXEngine', 
+        'DIRS': [os.path.join(BASE_DIR, "templates_tex")],
+        'APP_DIRS': True,
+        # 'OPTIONS':{
+        #      'LATEX_INTERPRETER' : 'pdflatex',  
+        # }
+    },
 ]
 
 WSGI_APPLICATION = 'trydjango.wsgi.application'
@@ -74,13 +86,20 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db2.sqlite3'),
-    }
-}
 
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'cert_details',
+'USER': 'root',
+'PASSWORD': 'firebird',
+'HOST': 'localhost',
+'PORT': '3306',
+'OPTIONS': {
+'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+}
+}
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
