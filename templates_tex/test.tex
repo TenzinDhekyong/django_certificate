@@ -1,6 +1,63 @@
-\documentclass{article}
-
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage[top=0.2in, bottom=0.2in, inner=0.2in, outer=0.2in, headheight=0.3in, headsep=0.2in]{geometry}
+\usepackage{fancyhdr}
+{% templates_tex/img%}
+\title{generic certificate}
 \begin{document}
+\pagenumbering{gobble} 
 
-\section{ {{- foo -}} }
+\begin{minipage}{0.18\linewidth}
+    \includegraphics[scale=0.46]{sidepanel}
+\end{minipage}
+\begin{minipage}{0.78\linewidth}
+    \textbf{ERTS lab}\par
+    Department of Computer Science and Engineering\par
+    Indian Institute of Technology Bombay\par
+    Powai, Mumbai-400 076\par\vspace{10pt}
+    \includegraphics[scale=0.7]{ring}\par
+    \Large{Certificate of Participation}\par\vspace{15pt}
+    \normalsize{This is to certify that {\color{blue}\textit{name}}, a student from college\_name has participated in the Regional Finals of the e-Yantra Ideas Competition (eYIC 2019-20) held at {\color{blue}\textit{venue}} on {\color{blue}\textit{date}}.}\par\vspace{15pt}
+    \normalsize{He/She is a member of the team having following team members,}\par
+    % [topsep=0pt, partopsep=0pt, itemsep=2pt, parsep=2pt]
+    \begin{enumerate}[topsep=0pt,itemsep=2pt,parsep=2pt]
+        \item name 1
+        \item name 2
+        \item name 3
+        \item name 4
+    \end{enumerate}
+    Mentored By: Prof Name\par\vspace{15pt}
+    This team demonstrated the project titled "{\color{blue}\textit{PROJECT\_NAME}}".\par\vspace{20pt}
+    \begin{minipage}{0.7\linewidth}
+        % over here we will have to add Kavi sir's digital sign and also the text below it, like name, designation till IIT Bombay
+        \hspace{10pt}
+        \includegraphics[scale=1.0]{sign}\par
+        \begin{tikzpicture}
+            \draw (0,0) -- (4,0);
+        \end{tikzpicture}\par
+        Prof. Kavi Arya\par
+        Principal Investigator, e-Yantra\par
+        Professor\par
+        Department of Computer Science and Engineering\par
+        Indian Institute of Technology, Bombay\par
+        \vspace{15pt}
+    \end{minipage}
+    \begin{minipage}{0.15\linewidth}
+        % over here the QR code of certi will come
+    \end{minipage}
+    \begin{tikzpicture}
+        \draw (0,0) -- (10,0);
+    \end{tikzpicture}\par
+    \small{\textbf{e-Yantra is a project sponsored by MHRD, Government of India, under the National Mission on Education through ICT (NMEICT).}}\par\vspace{5pt}
+    \footnotesize{\textbf{Certificate of Merit:} awarded to finalist teams\par
+    \textbf{Certificate of Completion:} awarded to ...\par
+    \textbf{Certificate of Participation:} awarded to ...\par
+    \textbf{Letter of Participation:} awarded to ...}
+\end{minipage}
 \end{document}
