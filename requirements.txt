@@ -1,5 +1,5 @@
 cffi==1.14.0
-cryptography==2.9.2
+cryptography==3.2
 Django==2.0.7
 django-cryptographic-fields==0.5.1
 django-tex==1.1.7
