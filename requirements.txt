@@ -9,7 +9,7 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 mysqlclient==1.4.6
 pdfkit==0.6.1
-Pillow==7.1.2
+Pillow==9.0.0
 pycparser==2.20
 PyMySQL==0.9.3
 PyPDF2==1.26.0
